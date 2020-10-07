@@ -1,0 +1,22 @@
+{
+  "name": "image-resizer-lambda",
+  "version": "1.0.0",
+  "description": "Lambda for resizing S3 images on the fly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/boweihan/image-resizer-lambda.git"
+  },
+  "keywords": [
+    "lambda"
+  ],
+  "author": "Bowei Han",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/boweihan/image-resizer-lambda/issues"
+  },
+  "homepage": "https://github.com/boweihan/image-resizer-lambda#readme"
+}
