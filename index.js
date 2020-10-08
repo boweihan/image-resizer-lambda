@@ -6,11 +6,11 @@ const S3 = new SDK.S3();
 const BUCKET = process.env.BUCKET;
 const BUCKET_URL = process.env.BUCKET_URL;
 
-const handler = function (event, context, callback) {
-  console.log(event, context, callback);
-  const size = event.queryStringParameters.key;
-  const path = event.path.slice(1);
-  const key = `${size}/${path}`;
+exports.handler = function (event, context, callback) {
+  const key = event.rawPath.slice(1);
+  const params = key.split("/");
+  const size = params[0];
+  const path = params[1];
 
   const dimensions = size.split("x");
   const width = parseInt(dimensions[0], 10);
@@ -40,12 +40,3 @@ const handler = function (event, context, callback) {
       )
   );
 };
-
-const event = {
-  queryStringParameters: {
-    key: "400x100",
-  },
-  path: "/theshot.jpg",
-};
-
-handler(event, null, () => {});
